@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="horizontal" android:gravity="center_vertical"
+    android:background="@drawable/bg_result_card"
+    android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
+    android:layout_marginBottom="10dp" android:padding="14dp"
+    android:clickable="true" android:focusable="true">
+    <TextView android:id="@+id/tvStoreEmoji"
+        android:layout_width="52dp" android:layout_height="52dp"
+        android:gravity="center" android:textSize="26sp"
+        android:background="@drawable/bg_widget_card" />
+    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+        android:layout_weight="1" android:orientation="vertical"
+        android:layout_marginStart="12dp">
+        <TextView android:id="@+id/tvStoreName" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textColor="#FFFFFF"
+            android:textSize="15sp" android:textStyle="bold" />
+        <TextView android:id="@+id/tvStoreDev" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textColor="#55FFFFFF"
+            android:textSize="11sp" android:layout_marginTop="1dp" />
+        <TextView android:id="@+id/tvStoreDesc" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textColor="#88FFFFFF"
+            android:textSize="12sp" android:layout_marginTop="3dp"
+            android:maxLines="1" android:ellipsize="end" />
+        <TextView android:id="@+id/tvStoreRating" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textColor="#FBBF24"
+            android:textSize="11sp" android:layout_marginTop="3dp" />
+    </LinearLayout>
+    <TextView android:id="@+id/btnStoreAction"
+        android:layout_width="64dp" android:layout_height="34dp"
+        android:gravity="center" android:textColor="#38BDF8"
+        android:textSize="13sp" android:textStyle="bold"
+        android:background="@drawable/bg_ai_card"
+        android:clickable="true" android:focusable="true" />
+</LinearLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#0F172A">
+
+    <!-- Top bar -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="88dp"
+        android:orientation="horizontal" android:gravity="bottom|center_vertical"
+        android:paddingStart="16dp" android:paddingEnd="16dp" android:paddingBottom="12dp"
+        android:background="#0D1425">
+        <ImageButton android:id="@+id/btnBack" android:layout_width="36dp" android:layout_height="36dp"
+            android:src="@drawable/ic_chevron_left" android:background="@drawable/bg_nav_btn"
+            android:contentDescription="Back" android:tint="#FFFFFF" />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="Phone" android:textColor="#FFFFFF"
+            android:textSize="18sp" android:textStyle="bold" android:gravity="center"
+            android:layout_marginEnd="36dp" />
+    </LinearLayout>
+
+    <!-- Tabs -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="48dp"
+        android:orientation="horizontal" android:background="#0D1425"
+        android:paddingStart="16dp" android:paddingEnd="16dp">
+        <TextView android:id="@+id/tabKeypad" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:text="Keypad" android:gravity="center" android:textSize="13sp"
+            android:textStyle="bold" android:textColor="#38BDF8" />
+        <TextView android:id="@+id/tabRecent" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:text="Recent" android:gravity="center" android:textSize="13sp"
+            android:textStyle="bold" android:textColor="#88FFFFFF" />
+        <TextView android:id="@+id/tabContacts" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:text="Contacts" android:gravity="center" android:textSize="13sp"
+            android:textStyle="bold" android:textColor="#88FFFFFF" />
+    </LinearLayout>
+
+    <!-- KEYPAD PANEL -->
+    <LinearLayout android:id="@+id/panelKeypad" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:orientation="vertical"
+        android:gravity="center" android:padding="24dp">
+
+        <!-- Dialed number display -->
+        <TextView android:id="@+id/tvDialed" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="" android:textColor="#FFFFFF"
+            android:textSize="36sp" android:textStyle="bold" android:gravity="center"
+            android:minHeight="56dp" android:layout_marginBottom="16dp"
+            android:letterSpacing="0.08" />
+
+        <!-- Row 1 -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center" android:layout_marginBottom="8dp">
+            <TextView android:id="@+id/key1" style="@style/DialKey" android:text="1" />
+            <TextView android:id="@+id/key2" style="@style/DialKey" android:text="2" />
+            <TextView android:id="@+id/key3" style="@style/DialKey" android:text="3" />
+        </LinearLayout>
+        <!-- Row 2 -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center" android:layout_marginBottom="8dp">
+            <TextView android:id="@+id/key4" style="@style/DialKey" android:text="4" />
+            <TextView android:id="@+id/key5" style="@style/DialKey" android:text="5" />
+            <TextView android:id="@+id/key6" style="@style/DialKey" android:text="6" />
+        </LinearLayout>
+        <!-- Row 3 -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center" android:layout_marginBottom="8dp">
+            <TextView android:id="@+id/key7" style="@style/DialKey" android:text="7" />
+            <TextView android:id="@+id/key8" style="@style/DialKey" android:text="8" />
+            <TextView android:id="@+id/key9" style="@style/DialKey" android:text="9" />
+        </LinearLayout>
+        <!-- Row 4 -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center" android:layout_marginBottom="24dp">
+            <TextView android:id="@+id/keyStar" style="@style/DialKey" android:text="*" />
+            <TextView android:id="@+id/key0"    style="@style/DialKey" android:text="0" />
+            <TextView android:id="@+id/keyHash" style="@style/DialKey" android:text="#" />
+        </LinearLayout>
+
+        <!-- Call + Delete row -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center">
+            <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
+            <TextView android:id="@+id/btnCall" android:layout_width="72dp"
+                android:layout_height="72dp" android:text="📞" android:textSize="28sp"
+                android:gravity="center" android:background="@drawable/bg_call_btn"
+                android:clickable="true" android:focusable="true" />
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:gravity="center">
+                <TextView android:id="@+id/keyDelete" android:layout_width="56dp"
+                    android:layout_height="56dp" android:text="⌫" android:textSize="22sp"
+                    android:gravity="center" android:textColor="#88FFFFFF"
+                    android:clickable="true" android:focusable="true" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- RECENT PANEL -->
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvRecent"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:visibility="gone" android:padding="8dp" android:clipToPadding="false" />
+
+    <!-- CONTACTS PANEL -->
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvContacts"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:visibility="gone" android:padding="8dp" android:clipToPadding="false" />
+
+</LinearLayout>

@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0F172A">
+
+    <!-- Top bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:orientation="horizontal"
+        android:gravity="bottom|center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="12dp"
+        android:background="#0D1425">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_chevron_left"
+            android:background="@drawable/bg_nav_btn"
+            android:contentDescription="Back"
+            android:tint="#FFFFFF" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Settings"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginEnd="36dp" />
+
+    </LinearLayout>
+
+    <!-- Scrollable body -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- About card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_settings_card"
+                android:gravity="center"
+                android:padding="20dp"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ZarOS"
+                    android:textColor="#38BDF8"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvSettingsVersion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Version 4.0.3 · Built with ♥"
+                    android:textColor="#55FFFFFF"
+                    android:textSize="12sp"
+                    android:layout_marginTop="4dp" />
+
+            </LinearLayout>
+
+            <!-- DISPLAY -->
+            <TextView style="@style/SectionTitle" android:text="DISPLAY" />
+            <LinearLayout style="@style/CardGroup" android:layout_marginBottom="18dp">
+
+                <!-- Brightness -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="14dp"
+                    android:background="@drawable/bg_settings_row_top">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="☀️  Brightness"
+                            android:textColor="#FFFFFF" android:textSize="14sp" android:textStyle="bold" />
+                        <TextView android:id="@+id/tvBrightnessVal"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="80%" android:textColor="#38BDF8" android:textSize="13sp" />
+                    </LinearLayout>
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/sliderBrightness"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:valueFrom="10" android:valueTo="100" android:value="80"
+                        android:stepSize="1"
+                        app:thumbColor="#38BDF8" app:trackColorActive="#38BDF8"
+                        app:trackColorInactive="#1E3A5C" app:thumbRadius="10dp" />
+                </LinearLayout>
+
+                <!-- Dark Mode -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="52dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:background="@drawable/bg_settings_row_bottom">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="🌙  Dark Mode"
+                        android:textColor="#FFFFFF" android:textSize="14sp" android:textStyle="bold" />
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/toggleDarkMode"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:thumbTint="#FFFFFF" app:trackTint="@color/switch_track_selector" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- WALLPAPER -->
+            <TextView style="@style/SectionTitle" android:text="WALLPAPER" />
+            <LinearLayout style="@style/CardGroup" android:layout_marginBottom="18dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="14dp"
+                    android:background="@drawable/bg_settings_row_top">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Choose a wallpaper" android:textColor="#FFFFFF"
+                        android:textSize="14sp" android:textStyle="bold" android:layout_marginBottom="12dp" />
+                    <!-- Row 1 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center"
+                        android:layout_marginBottom="8dp">
+                        <View android:id="@+id/wall0" style="@style/WallOption" android:background="@drawable/wall_0" />
+                        <View android:id="@+id/wall1" style="@style/WallOption" android:background="@drawable/wall_1" />
+                        <View android:id="@+id/wall2" style="@style/WallOption" android:background="@drawable/wall_2" />
+                        <View android:id="@+id/wall3" style="@style/WallOption" android:background="@drawable/wall_3" />
+                    </LinearLayout>
+                    <!-- Row 2 -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center">
+                        <View android:id="@+id/wall4" style="@style/WallOption" android:background="@drawable/wall_4" />
+                        <View android:id="@+id/wall5" style="@style/WallOption" android:background="@drawable/wall_5" />
+                        <View android:id="@+id/wall6" style="@style/WallOption" android:background="@drawable/wall_6" />
+                        <View android:id="@+id/wall7" style="@style/WallOption" android:background="@drawable/wall_7" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="52dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:background="@drawable/bg_settings_row_bottom">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="🌊  Animated Wallpaper"
+                        android:textColor="#FFFFFF" android:textSize="14sp" android:textStyle="bold" />
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/toggleAnimatedWallpaper"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:thumbTint="#FFFFFF" app:trackTint="@color/switch_track_selector" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- SOUND -->
+            <TextView style="@style/SectionTitle" android:text="SOUND" />
+            <LinearLayout style="@style/CardGroup" android:layout_marginBottom="18dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="14dp"
+                    android:background="@drawable/bg_settings_row_top">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="🔊  Volume"
+                            android:textColor="#FFFFFF" android:textSize="14sp" android:textStyle="bold" />
+                        <TextView android:id="@+id/tvVolumeVal"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="65%" android:textColor="#38BDF8" android:textSize="13sp" />
+                    </LinearLayout>
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/sliderVolume"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:valueFrom="0" android:valueTo="100" android:value="65"
+                        android:stepSize="1"
+                        app:thumbColor="#38BDF8" app:trackColorActive="#38BDF8"
+                        app:trackColorInactive="#1E3A5C" app:thumbRadius="10dp" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="52dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:background="@drawable/bg_settings_row_mid">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="📳  Vibration"
+                        android:textColor="#FFFFFF" android:textSize="14sp" android:textStyle="bold" />
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/toggleVibration"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:thumbTint="#FFFFFF" app:trackTint="@color/switch_track_selector" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="52dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:background="@drawable/bg_settings_row_bottom">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="🔔  Notifications"
+                        android:textColor="#FFFFFF" android:textSize="14sp" android:textStyle="bold" />
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/toggleNotifications"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:thumbTint="#FFFFFF" app:trackTint="@color/switch_track_selector" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- CONNECTIVITY -->
+            <TextView style="@style/SectionTitle" android:text="CONNECTIVITY" />
+            <LinearLayout style="@style/CardGroup" android:layout_marginBottom="18dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="52dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:background="@drawable/bg_settings_row_top">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="📶  Wi-Fi"
+                        android:textColor="#FFFFFF" android:textSize="14sp" android:textStyle="bold" />
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/toggleWifi"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:thumbTint="#FFFFFF" app:trackTint="@color/switch_track_selector" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="52dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:background="@drawable/bg_settings_row_bottom">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="🔵  Bluetooth"
+                        android:textColor="#FFFFFF" android:textSize="14sp" android:textStyle="bold" />
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/toggleBluetooth"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:checked="false"
+                        app:thumbTint="#FFFFFF" app:trackTint="@color/switch_track_selector" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- BROWSER -->
+            <TextView style="@style/SectionTitle" android:text="BROWSER" />
+            <LinearLayout style="@style/CardGroup" android:layout_marginBottom="18dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="52dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:background="@drawable/bg_settings_row_top">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="🔍  Default Browser"
+                        android:textColor="#FFFFFF" android:textSize="14sp" android:textStyle="bold" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Fynder" android:textColor="#38BDF8" android:textSize="13sp" />
+                </LinearLayout>
+                <LinearLayout android:id="@+id/rowOpenFynder"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:background="@drawable/bg_settings_row_mid"
+                    android:clickable="true" android:focusable="true">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="🌐  Open Fynder"
+                        android:textColor="#FFFFFF" android:textSize="14sp" android:textStyle="bold" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textColor="#55FFFFFF" android:textSize="18sp" />
+                </LinearLayout>
+                <LinearLayout android:id="@+id/rowClearHistory"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:background="@drawable/bg_settings_row_bottom"
+                    android:clickable="true" android:focusable="true">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="🗑️  Clear Search History"
+                        android:textColor="#FFFFFF" android:textSize="14sp" android:textStyle="bold" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textColor="#55FFFFFF" android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- CLOCK -->
+            <TextView style="@style/SectionTitle" android:text="CLOCK" />
+            <LinearLayout style="@style/CardGroup" android:layout_marginBottom="18dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="52dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:background="@drawable/bg_settings_row_single">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="🕐  24-Hour Clock"
+                        android:textColor="#FFFFFF" android:textSize="14sp" android:textStyle="bold" />
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/toggle24h"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:checked="false"
+                        app:thumbTint="#FFFFFF" app:trackTint="@color/switch_track_selector" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- SYSTEM -->
+            <TextView style="@style/SectionTitle" android:text="SYSTEM" />
+            <LinearLayout style="@style/CardGroup" android:layout_marginBottom="32dp">
+                <LinearLayout android:id="@+id/rowSwitchLauncher"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:background="@drawable/bg_settings_row_top"
+                    android:clickable="true" android:focusable="true">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="🏠  Switch Launcher"
+                        android:textColor="#38BDF8" android:textSize="14sp" android:textStyle="bold" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textColor="#55FFFFFF" android:textSize="18sp" />
+                </LinearLayout>
+                <LinearLayout android:id="@+id/rowAbout"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:background="@drawable/bg_settings_row_mid"
+                    android:clickable="true" android:focusable="true">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="ℹ️  About ZarOS"
+                        android:textColor="#FFFFFF" android:textSize="14sp" android:textStyle="bold" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textColor="#55FFFFFF" android:textSize="18sp" />
+                </LinearLayout>
+                <LinearLayout android:id="@+id/rowUpdate"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:background="@drawable/bg_settings_row_mid"
+                    android:clickable="true" android:focusable="true">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="🔄  Software Update"
+                        android:textColor="#FFFFFF" android:textSize="14sp" android:textStyle="bold" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Up to date" android:textColor="#38BDF8" android:textSize="12sp"
+                        android:layout_marginEnd="6dp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textColor="#55FFFFFF" android:textSize="18sp" />
+                </LinearLayout>
+                <LinearLayout android:id="@+id/rowReset"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:background="@drawable/bg_settings_row_bottom"
+                    android:clickable="true" android:focusable="true">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="♻️  Factory Reset"
+                        android:textColor="#FF6B6B" android:textSize="14sp" android:textStyle="bold" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textColor="#55FFFFFF" android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

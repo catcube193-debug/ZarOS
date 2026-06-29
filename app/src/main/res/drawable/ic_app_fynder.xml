@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="56dp" android:height="56dp"
+    android:viewportWidth="56" android:viewportHeight="56">
+    <!-- White rounded square bg -->
+    <path android:pathData="M8,8 L48,8 Q48,8,48,8 L48,48 Q48,48,48,48 L8,48 Q8,48,8,48 L8,8 Z"
+        android:fillColor="#FFFFFF" />
+    <!-- Q letter -->
+    <path android:pathData="M28,14 A14,14,0,1,0,28,42 A14,14,0,0,0,28,14 Z"
+        android:strokeColor="#0369A1" android:strokeWidth="4"
+        android:fillColor="@android:color/transparent" />
+    <path android:pathData="M36,36 L42,42"
+        android:strokeColor="#0369A1" android:strokeWidth="4"
+        android:strokeLineCap="round" />
+</vector>

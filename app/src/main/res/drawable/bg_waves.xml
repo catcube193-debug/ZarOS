@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Approximated wave using a layered gradient shape.
+  For a true SVG wave, replace this with a vector drawable or
+  use a custom View that draws a Path.
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:gravity="bottom">
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="90"
+                android:startColor="#000C4A6E"
+                android:endColor="#880C4A6E" />
+            <corners android:topLeftRadius="60dp" android:topRightRadius="60dp" />
+        </shape>
+    </item>
+</layer-list>

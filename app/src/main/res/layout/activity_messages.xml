@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#0F172A">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="88dp"
+        android:orientation="horizontal" android:gravity="bottom|center_vertical"
+        android:paddingStart="16dp" android:paddingEnd="16dp" android:paddingBottom="12dp"
+        android:background="#0D1425">
+        <ImageButton android:id="@+id/btnBack" android:layout_width="36dp" android:layout_height="36dp"
+            android:src="@drawable/ic_chevron_left" android:background="@drawable/bg_nav_btn"
+            android:contentDescription="Back" android:tint="#FFFFFF" />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="Messages" android:textColor="#FFFFFF"
+            android:textSize="18sp" android:textStyle="bold" android:gravity="center"
+            android:layout_marginEnd="36dp" />
+    </LinearLayout>
+
+    <TextView android:id="@+id/tvEmpty" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:text="No messages yet"
+        android:textColor="#44FFFFFF" android:textSize="16sp" android:gravity="center"
+        android:visibility="gone" />
+
+    <LinearLayout android:id="@+id/loadingContainer"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical" android:gravity="center" android:visibility="visible">
+        <ProgressBar android:layout_width="36dp" android:layout_height="36dp"
+            android:indeterminateTint="#38BDF8" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Loading messages…" android:textColor="#66FFFFFF"
+            android:textSize="13sp" android:layout_marginTop="12dp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvThreads"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:padding="8dp" android:clipToPadding="false" android:visibility="gone" />
+</LinearLayout>

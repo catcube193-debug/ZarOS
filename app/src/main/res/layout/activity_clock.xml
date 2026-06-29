@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#0F172A">
+
+    <!-- Top bar -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="88dp"
+        android:orientation="horizontal" android:gravity="bottom|center_vertical"
+        android:paddingStart="16dp" android:paddingEnd="16dp" android:paddingBottom="12dp"
+        android:background="#0D1425">
+        <ImageButton android:id="@+id/btnBack" android:layout_width="36dp" android:layout_height="36dp"
+            android:src="@drawable/ic_chevron_left" android:background="@drawable/bg_nav_btn"
+            android:contentDescription="Back" android:tint="#FFFFFF" />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="Clock" android:textColor="#FFFFFF"
+            android:textSize="18sp" android:textStyle="bold" android:gravity="center"
+            android:layout_marginEnd="36dp" />
+    </LinearLayout>
+
+    <!-- Tabs -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="48dp"
+        android:orientation="horizontal" android:background="#0D1425"
+        android:paddingStart="8dp" android:paddingEnd="8dp">
+        <TextView android:id="@+id/tabClock" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:text="Clock" android:gravity="center" android:textSize="12sp"
+            android:textStyle="bold" android:textColor="#38BDF8" />
+        <TextView android:id="@+id/tabStopwatch" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:text="Stopwatch" android:gravity="center" android:textSize="12sp"
+            android:textStyle="bold" android:textColor="#88FFFFFF" />
+        <TextView android:id="@+id/tabTimer" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:text="Timer" android:gravity="center" android:textSize="12sp"
+            android:textStyle="bold" android:textColor="#88FFFFFF" />
+        <TextView android:id="@+id/tabAlarm" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:text="Alarm" android:gravity="center" android:textSize="12sp"
+            android:textStyle="bold" android:textColor="#88FFFFFF" />
+    </LinearLayout>
+
+    <!-- CLOCK PANEL -->
+    <LinearLayout android:id="@+id/panelClock"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical" android:gravity="center" android:padding="32dp">
+        <TextView android:id="@+id/tvClockTime"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="10:00" android:textColor="#FFFFFF" android:textSize="72sp"
+            android:textStyle="bold" android:fontFamily="@string/font_clock"
+            android:letterSpacing="0.04" />
+        <TextView android:id="@+id/tvClockAmPm"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="PM" android:textColor="#88FFFFFF" android:textSize="24sp"
+            android:fontFamily="@string/font_clock"
+            android:layout_marginTop="4dp" android:letterSpacing="0.1" />
+        <TextView android:id="@+id/tvClockDate"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Friday, June 6" android:textColor="#66FFFFFF"
+            android:textSize="16sp" android:layout_marginTop="16dp" />
+    </LinearLayout>
+
+    <!-- STOPWATCH PANEL -->
+    <LinearLayout android:id="@+id/panelStopwatch"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical" android:gravity="center" android:padding="24dp"
+        android:visibility="gone">
+        <TextView android:id="@+id/tvStopwatch"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="00:00.00" android:textColor="#38BDF8" android:textSize="56sp"
+            android:textStyle="bold" android:fontFamily="monospace"
+            android:layout_marginBottom="32dp" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center">
+            <TextView android:id="@+id/btnSwReset"
+                android:layout_width="90dp" android:layout_height="90dp"
+                android:text="Reset" android:textColor="#FFFFFF" android:textSize="14sp"
+                android:textStyle="bold" android:gravity="center"
+                android:background="@drawable/bg_clock_btn_grey"
+                android:layout_marginEnd="16dp"
+                android:clickable="true" android:focusable="true" />
+            <TextView android:id="@+id/btnSwStartStop"
+                android:layout_width="90dp" android:layout_height="90dp"
+                android:text="Start" android:textColor="#FFFFFF" android:textSize="14sp"
+                android:textStyle="bold" android:gravity="center"
+                android:background="@drawable/bg_clock_btn_green"
+                android:layout_marginEnd="16dp"
+                android:clickable="true" android:focusable="true" />
+            <TextView android:id="@+id/btnSwLap"
+                android:layout_width="90dp" android:layout_height="90dp"
+                android:text="Lap" android:textColor="#FFFFFF" android:textSize="14sp"
+                android:textStyle="bold" android:gravity="center"
+                android:background="@drawable/bg_clock_btn_blue"
+                android:clickable="true" android:focusable="true" />
+        </LinearLayout>
+        <ScrollView android:layout_width="match_parent" android:layout_height="0dp"
+            android:layout_weight="1" android:layout_marginTop="20dp"
+            android:scrollbars="none">
+            <TextView android:id="@+id/tvLaps" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:textColor="#88FFFFFF"
+                android:textSize="13sp" android:fontFamily="monospace"
+                android:gravity="center" android:lineSpacingMultiplier="1.6" />
+        </ScrollView>
+    </LinearLayout>
+
+    <!-- TIMER PANEL -->
+    <LinearLayout android:id="@+id/panelTimer"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical" android:gravity="center" android:padding="24dp"
+        android:visibility="gone">
+        <TextView android:id="@+id/tvTimer"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="00:30" android:textColor="#38BDF8" android:textSize="72sp"
+            android:textStyle="bold" android:fontFamily="monospace"
+            android:layout_marginBottom="24dp" />
+        <!-- Pickers -->
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:layout_marginBottom="32dp">
+            <NumberPicker android:id="@+id/pickerTimerMin"
+                android:layout_width="90dp" android:layout_height="wrap_content"
+                android:textColor="#FFFFFF" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="min" android:textColor="#66FFFFFF" android:textSize="14sp"
+                android:layout_marginStart="6dp" android:layout_marginEnd="16dp" />
+            <NumberPicker android:id="@+id/pickerTimerSec"
+                android:layout_width="90dp" android:layout_height="wrap_content" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="sec" android:textColor="#66FFFFFF" android:textSize="14sp"
+                android:layout_marginStart="6dp" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center">
+            <TextView android:id="@+id/btnTimerReset"
+                android:layout_width="100dp" android:layout_height="56dp"
+                android:text="Reset" android:textColor="#FFFFFF" android:textSize="15sp"
+                android:textStyle="bold" android:gravity="center"
+                android:background="@drawable/bg_clock_btn_grey"
+                android:layout_marginEnd="16dp"
+                android:clickable="true" android:focusable="true" />
+            <TextView android:id="@+id/btnTimerStart"
+                android:layout_width="100dp" android:layout_height="56dp"
+                android:text="Start" android:textColor="#FFFFFF" android:textSize="15sp"
+                android:textStyle="bold" android:gravity="center"
+                android:background="@drawable/bg_clock_btn_green"
+                android:clickable="true" android:focusable="true" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- ALARM PANEL -->
+    <LinearLayout android:id="@+id/panelAlarm"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical" android:gravity="center" android:padding="24dp"
+        android:visibility="gone">
+        <!-- Pickers row -->
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
+            <NumberPicker android:id="@+id/pickerAlarmHour"
+                android:layout_width="90dp" android:layout_height="wrap_content" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text=":" android:textColor="#FFFFFF" android:textSize="32sp"
+                android:textStyle="bold" android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp" />
+            <NumberPicker android:id="@+id/pickerAlarmMin"
+                android:layout_width="90dp" android:layout_height="wrap_content" />
+            <TextView android:id="@+id/btnAlarmAmPm"
+                android:layout_width="56dp" android:layout_height="44dp"
+                android:text="AM" android:textColor="#38BDF8" android:textSize="14sp"
+                android:textStyle="bold" android:gravity="center"
+                android:background="@drawable/bg_url_bar"
+                android:layout_marginStart="12dp"
+                android:clickable="true" android:focusable="true" />
+        </LinearLayout>
+        <TextView android:id="@+id/tvAlarmStatus"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="No alarm set" android:textColor="#66FFFFFF"
+            android:textSize="14sp" android:layout_marginBottom="24dp" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center">
+            <TextView android:id="@+id/btnCancelAlarm"
+                android:layout_width="110dp" android:layout_height="52dp"
+                android:text="Cancel" android:textColor="#FFFFFF" android:textSize="14sp"
+                android:textStyle="bold" android:gravity="center"
+                android:background="@drawable/bg_clock_btn_grey"
+                android:layout_marginEnd="16dp"
+                android:clickable="true" android:focusable="true" />
+            <TextView android:id="@+id/btnSetAlarm"
+                android:layout_width="110dp" android:layout_height="52dp"
+                android:text="Set Alarm" android:textColor="#FFFFFF" android:textSize="14sp"
+                android:textStyle="bold" android:gravity="center"
+                android:background="@drawable/bg_clock_btn_blue"
+                android:clickable="true" android:focusable="true" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#0F172A">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="88dp"
+        android:orientation="horizontal" android:gravity="bottom|center_vertical"
+        android:paddingStart="16dp" android:paddingEnd="16dp" android:paddingBottom="12dp"
+        android:background="#0D1425">
+        <ImageButton android:id="@+id/btnBack" android:layout_width="36dp" android:layout_height="36dp"
+            android:src="@drawable/ic_chevron_left" android:background="@drawable/bg_nav_btn"
+            android:contentDescription="Back" android:tint="#FFFFFF" />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="Home App"
+            android:textColor="#FFFFFF" android:textSize="18sp" android:textStyle="bold"
+            android:gravity="center" android:layout_marginEnd="36dp" />
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical" android:padding="24dp">
+
+        <FrameLayout android:layout_width="100dp" android:layout_height="100dp"
+            android:layout_gravity="center_horizontal" android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp">
+            <ImageView android:layout_width="match_parent" android:layout_height="match_parent"
+                android:src="@drawable/zaros_logo" android:contentDescription="ZarOS" />
+        </FrameLayout>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Choose Your Home Screen" android:textColor="#FFFFFF"
+            android:textSize="20sp" android:textStyle="bold" android:gravity="center"
+            android:layout_marginBottom="8dp" />
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="ZarOS replaces your home screen and lock screen. You can switch back to your original launcher anytime."
+            android:textColor="#88FFFFFF" android:textSize="13sp" android:gravity="center"
+            android:layout_marginBottom="32dp" android:lineSpacingMultiplier="1.4" />
+
+        <LinearLayout android:id="@+id/btnSetZarOS"
+            android:layout_width="match_parent" android:layout_height="56dp"
+            android:orientation="horizontal" android:gravity="center"
+            android:background="@drawable/bg_clock_btn_blue"
+            android:layout_marginBottom="14dp"
+            android:clickable="true" android:focusable="true">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="🏠  Set ZarOS as Home" android:textColor="#FFFFFF"
+                android:textSize="15sp" android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/btnSwitchLauncher"
+            android:layout_width="match_parent" android:layout_height="56dp"
+            android:orientation="horizontal" android:gravity="center"
+            android:background="@drawable/bg_widget_card"
+            android:layout_marginBottom="24dp"
+            android:clickable="true" android:focusable="true">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="🔄  Choose Different Launcher" android:textColor="#FFFFFF"
+                android:textSize="15sp" android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:background="@drawable/bg_ai_card"
+            android:padding="16dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="💡 Tip" android:textColor="#38BDF8" android:textSize="13sp"
+                android:textStyle="bold" android:layout_marginBottom="6dp" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="Android will show you a list of installed launchers. Tap ZarOS and select 'Always' to make it permanent."
+                android:textColor="#AAFFFFFF" android:textSize="13sp" android:lineSpacingMultiplier="1.4" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

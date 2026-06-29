@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ZarOS Home Screen — Springboard App Grid Page
+
+  A single reusable page layout for any springboard page that just
+  shows a grid of app icons. AppPagerAdapter inflates one of these per
+  grid page and binds a different slice of AppRegistry.getHomeApps()
+  to each instance, the same way a real phone's home screen pages work.
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:paddingTop="56dp">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAppGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="false"
+        android:overScrollMode="never" />
+
+</LinearLayout>

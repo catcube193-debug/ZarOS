@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <!-- Scrim -->
+    <View android:id="@+id/scrim"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:background="#88000000" />
+
+    <!-- Panel -->
+    <LinearLayout android:id="@+id/shadePanel"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_shade_panel"
+        android:paddingTop="50dp" android:paddingBottom="16dp">
+
+        <!-- Time + date row -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:paddingStart="20dp" android:paddingEnd="20dp" android:paddingBottom="16dp">
+            <TextView android:id="@+id/tvShadeTime"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="10:00 PM"
+                android:textColor="#FFFFFF" android:textSize="22sp" android:textStyle="bold" />
+            <TextView android:id="@+id/tvShadeDate"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Fri, Jun 6" android:textColor="#88FFFFFF" android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- Brightness row -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:paddingStart="20dp" android:paddingEnd="20dp" android:paddingBottom="10dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="☀️" android:textSize="16sp" android:layout_marginEnd="10dp" />
+            <com.google.android.material.slider.Slider android:id="@+id/brightnessSlider"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:valueFrom="10" android:valueTo="100" android:value="80"
+                android:stepSize="1"
+                app:thumbColor="#38BDF8" app:trackColorActive="#38BDF8"
+                app:trackColorInactive="#334155" app:thumbRadius="8dp" />
+        </LinearLayout>
+
+        <!-- Quick toggles -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center"
+            android:paddingStart="12dp" android:paddingEnd="12dp" android:paddingBottom="16dp">
+
+            <LinearLayout android:id="@+id/toggleWifi" style="@style/QuickToggle">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="📶" android:textSize="22sp" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Wi-Fi" android:textColor="#CCFFFFFF" android:textSize="9sp"
+                    android:layout_marginTop="3dp" />
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/toggleBt" style="@style/QuickToggle">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="🔵" android:textSize="22sp" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="BT" android:textColor="#CCFFFFFF" android:textSize="9sp"
+                    android:layout_marginTop="3dp" />
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/toggleVibrate" style="@style/QuickToggle">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="📳" android:textSize="22sp" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Vibrate" android:textColor="#CCFFFFFF" android:textSize="9sp"
+                    android:layout_marginTop="3dp" />
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/toggleNotif" style="@style/QuickToggle">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="🔔" android:textSize="22sp" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Notifs" android:textColor="#CCFFFFFF" android:textSize="9sp"
+                    android:layout_marginTop="3dp" />
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/toggleDark" style="@style/QuickToggle">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="🌙" android:textSize="22sp" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Dark" android:textColor="#CCFFFFFF" android:textSize="9sp"
+                    android:layout_marginTop="3dp" />
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/toggleDnd" style="@style/QuickToggle">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="🔇" android:textSize="22sp" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="DND" android:textColor="#CCFFFFFF" android:textSize="9sp"
+                    android:layout_marginTop="3dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Divider -->
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+            android:background="#15FFFFFF" android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp" android:layout_marginBottom="12dp" />
+
+        <!-- Notification header -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:paddingStart="20dp" android:paddingEnd="16dp" android:paddingBottom="10dp">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="NOTIFICATIONS"
+                android:textColor="#55FFFFFF" android:textSize="10sp" android:textStyle="bold"
+                android:letterSpacing="0.1" />
+            <TextView android:id="@+id/btnClearAll"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Clear all" android:textColor="#38BDF8" android:textSize="12sp"
+                android:padding="8dp" android:clickable="true" android:focusable="true" />
+        </LinearLayout>
+
+        <!-- Notification cards container -->
+        <LinearLayout android:id="@+id/notifContainer"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="12dp" android:paddingEnd="12dp" />
+
+        <!-- Pull handle -->
+        <View android:layout_width="48dp" android:layout_height="4dp"
+            android:layout_gravity="center_horizontal" android:layout_marginTop="16dp"
+            android:background="#44FFFFFF"
+            android:layout_marginBottom="4dp" />
+
+    </LinearLayout>
+</FrameLayout>

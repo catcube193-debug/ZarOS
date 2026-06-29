@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ZarOS Lock Screen Layout
+  Full-screen gradient background with clock, date, and swipe hint.
+-->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_lock_gradient">
+
+    <!-- Animated wallpaper (shown when enabled in Settings; hides static bg above) -->
+    <com.zaros.app.ui.AnimatedWallpaperView
+        android:id="@+id/animatedWallpaper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <!-- Status bar -->
+    <com.zaros.app.ui.StatusBarView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:paddingTop="4dp" />
+
+    <!-- Wave overlay at bottom -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="bottom"
+        android:src="@drawable/bg_waves"
+        android:scaleType="fitXY"
+        android:contentDescription="@null" />
+
+    <!-- Clock + Date centered vertically in upper portion -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="100dp"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- Time -->
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10:00"
+            android:textSize="80sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:fontFamily="@string/font_clock"
+            android:letterSpacing="0.04"
+            android:shadowColor="#60000000"
+            android:shadowDx="0"
+            android:shadowDy="4"
+            android:shadowRadius="20" />
+
+        <!-- AM/PM -->
+        <TextView
+            android:id="@+id/tvAmPm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PM"
+            android:textSize="28sp"
+            android:textColor="#E0FFFFFF"
+            android:fontFamily="@string/font_clock"
+            android:letterSpacing="0.12"
+            android:layout_marginTop="4dp" />
+
+        <!-- Date -->
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Friday, June 6"
+            android:textSize="16sp"
+            android:textColor="#99FFFFFF"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.06"
+            android:layout_marginTop="14dp" />
+
+    </LinearLayout>
+
+    <!-- Swipe hint at bottom -->
+    <LinearLayout
+        android:id="@+id/llSwipeHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="56dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:alpha="0.65">
+
+        <!-- Up arrow -->
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_arrow_up"
+            android:contentDescription="@null" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SWIPE UP TO UNLOCK"
+            android:textSize="11sp"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.12"
+            android:layout_marginTop="6dp" />
+
+    </LinearLayout>
+
+    <!-- ZarOS watermark -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="20dp"
+        android:text="ZAROS"
+        android:textSize="9sp"
+        android:textColor="#30FFFFFF"
+        android:fontFamily="@string/font_clock"
+        android:letterSpacing="0.22" />
+
+</FrameLayout>

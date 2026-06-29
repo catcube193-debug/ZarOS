@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:id="@+id/splashRoot">
+
+    <!-- Centered content -->
+    <LinearLayout
+        android:id="@+id/splashContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:alpha="0">
+
+        <!-- ZarOS Crown Logo -->
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@drawable/zaros_logo"
+            android:contentDescription="ZarOS Logo"
+            android:scaleType="fitCenter" />
+
+        <!-- ZarOS name -->
+        <TextView
+            android:id="@+id/tvBootName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ZarOS"
+            android:textColor="#FFFFFF"
+            android:textSize="44sp"
+            android:textStyle="bold"
+            android:fontFamily="@string/font_clock"
+            android:letterSpacing="0.18"
+            android:layout_marginTop="20dp" />
+
+        <!-- Tagline -->
+        <TextView
+            android:id="@+id/tvBootTagline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your OS. Your Rules."
+            android:textColor="#66FFFFFF"
+            android:textSize="14sp"
+            android:letterSpacing="0.08"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+
+    <!-- Version bottom -->
+    <TextView
+        android:id="@+id/tvBootVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="48dp"
+        android:text="v4.0.3"
+        android:textColor="#22FFFFFF"
+        android:textSize="11sp" />
+
+</FrameLayout>

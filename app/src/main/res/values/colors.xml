@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="zar_blue_1">#38BDF8</color>
+    <color name="zar_blue_2">#0EA5E9</color>
+    <color name="zar_blue_3">#0369A1</color>
+    <color name="zar_blue_4">#0C4A6E</color>
+    <color name="zar_navy">#0D1117</color>
+    <color name="ytmusic_start">#CC0000</color>
+    <color name="ytmusic_end">#FF4444</color>
+    <color name="store_start">#007AFF</color>
+    <color name="store_end">#34AADC</color>
+    <color name="settings_start">#3A3A4A</color>
+    <color name="settings_end">#555568</color>
+    <color name="youtube_start">#FF0000</color>
+    <color name="youtube_end">#CC0000</color>
+    <color name="messages_start">#22C55E</color>
+    <color name="messages_end">#15803D</color>
+    <color name="files_start">#0EA5E9</color>
+    <color name="files_end">#0369A1</color>
+    <color name="camera_start">#1C2A4A</color>
+    <color name="camera_end">#0F172A</color>
+    <color name="glass_white">#20FFFFFF</color>
+    <color name="glass_border">#35FFFFFF</color>
+    <color name="chip_bg">#18FFFFFF</color>
+    <color name="chip_text">#FFFFFFFF</color>
+    <color name="switch_on">#380EA5E9</color>
+    <color name="switch_off">#382A2A3A</color>
+</resources>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ZarOS Home Screen Layout (4.1.0 — Springboard)
+  - Status bar area (top padding)
+  - ViewPager2 with N horizontally-swipeable pages:
+      Page 0: Spotlight (search bar + weather + quick icons + recent chips)
+      Page 1..N: App grid pages, auto-split from AppRegistry.getHomeApps()
+  - Real page indicator dots tracking the pager's current position
+  - Fixed dock at bottom, outside the pager, same on every page
+-->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_home_gradient">
+
+    <!-- Animated wallpaper layer (4.0.0) -->
+    <com.zaros.app.ui.AnimatedWallpaperView
+        android:id="@+id/animatedWallpaper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Wave overlay -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="bottom"
+        android:src="@drawable/bg_waves"
+        android:scaleType="fitXY"
+        android:contentDescription="@null" />
+
+    <!-- Live Status Bar -->
+    <com.zaros.app.ui.StatusBarView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="#22000000"
+        android:paddingTop="4dp"
+        android:elevation="6dp" />
+
+    <!-- Springboard pager (above dock + indicator dots) -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/homePager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="120dp" />
+
+    <!-- Page indicator dots — populated/updated at runtime from HomeActivity -->
+    <LinearLayout
+        android:id="@+id/pageIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="106dp"
+        android:orientation="horizontal"
+        android:gravity="center" />
+
+    <!-- ── DOCK ── fixed at bottom, same across every springboard page ── -->
+    <LinearLayout
+        android:id="@+id/dockContainer"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:background="@drawable/bg_dock"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvDock"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:overScrollMode="never" />
+
+    </LinearLayout>
+
+    <!-- ZarOS watermark -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="8dp"
+        android:text="ZAROS"
+        android:textSize="8sp"
+        android:textColor="#25FFFFFF"
+        android:fontFamily="@string/font_clock"
+        android:letterSpacing="0.22" />
+
+    <!-- App Drawer Button -->
+    <ImageButton
+        android:id="@+id/btnAppDrawer"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="130dp"
+        android:src="@drawable/ic_arrow_up"
+        android:background="@drawable/bg_widget_card"
+        android:contentDescription="App Drawer"
+        android:tint="#AAFFFFFF"
+        android:padding="14dp" />
+</FrameLayout>

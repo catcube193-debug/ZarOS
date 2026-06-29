@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#0A0F1E">
+
+    <!-- Top bar -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="88dp"
+        android:orientation="horizontal" android:gravity="bottom|center_vertical"
+        android:paddingStart="16dp" android:paddingEnd="16dp" android:paddingBottom="12dp"
+        android:background="#0D1425">
+        <ImageButton android:id="@+id/btnBack" android:layout_width="36dp" android:layout_height="36dp"
+            android:src="@drawable/ic_chevron_left" android:background="@drawable/bg_nav_btn"
+            android:contentDescription="Back" android:tint="#FFFFFF" />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="ZarOS App Store"
+            android:textColor="#FFFFFF" android:textSize="18sp" android:textStyle="bold"
+            android:gravity="center" android:layout_marginEnd="36dp" />
+    </LinearLayout>
+
+    <!-- Search bar -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="52dp"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:layout_marginStart="16dp" android:layout_marginEnd="16dp"
+        android:layout_marginTop="10dp" android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_url_bar" android:paddingStart="14dp" android:paddingEnd="14dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="🔍" android:textSize="16sp" android:layout_marginEnd="8dp" />
+        <EditText android:id="@+id/etSearch" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:background="@null"
+            android:textColor="#FFFFFF" android:textColorHint="#55FFFFFF"
+            android:hint="Search apps..." android:textSize="14sp"
+            android:singleLine="true" android:imeOptions="actionSearch" />
+    </LinearLayout>
+
+    <!-- Category chips -->
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvCategories"
+        android:layout_width="match_parent" android:layout_height="44dp"
+        android:paddingStart="12dp" android:paddingEnd="12dp"
+        android:clipToPadding="false" android:overScrollMode="never" />
+
+    <!-- App list -->
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvApps"
+        android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:padding="8dp"
+        android:clipToPadding="false" android:overScrollMode="never" />
+
+</LinearLayout>

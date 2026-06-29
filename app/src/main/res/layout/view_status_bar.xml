@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="28dp"
+    android:orientation="horizontal" android:gravity="center_vertical"
+    android:paddingStart="16dp" android:paddingEnd="16dp">
+
+    <TextView android:id="@+id/tvStatusTime"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:textColor="#FFFFFF" android:textSize="11sp" android:textStyle="bold" />
+
+    <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
+
+    <TextView android:id="@+id/tvStatusSignal"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="▐▐▐" android:textColor="#AAFFFFFF" android:textSize="9sp"
+        android:layout_marginEnd="6dp" />
+
+    <TextView android:id="@+id/tvStatusWifi"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="WiFi" android:textColor="#AAFFFFFF" android:textSize="9sp"
+        android:layout_marginEnd="6dp" />
+
+    <TextView android:id="@+id/tvStatusBattery"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="🔋" android:textColor="#FFFFFF" android:textSize="10sp" />
+
+</LinearLayout>

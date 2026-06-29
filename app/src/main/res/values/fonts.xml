@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ZarOS Font Configuration
+  ========================
+  Every ZarOS brand text view (boot logo, lock screen clock, home screen
+  watermark, Clock app display) references @string/font_clock below instead
+  of a hardcoded font name. That means installing the real Orbitron font is
+  now a ONE-LINE change — no hunting through layout files required.
+
+  STATUS: Pointed at @font/orbitron_bold below. You just need to copy the
+  actual font file into place — see FINAL STEP at the bottom.
+
+  You downloaded the VARIABLE font (Orbitron-VariableFont_wght.ttf), which
+  contains every weight (100–900) in a single file controlled by a "wght"
+  axis, rather than separate Bold/Regular files. Android's resource system
+  expects one weight per file, so rename it on the way in:
+
+  FINAL STEP (run on your machine, not in this chat):
+    cp ~/Downloads/Orbitron/Orbitron-VariableFont_wght.ttf \
+       <path-to-project>/ZarOS/app/src/main/res/font/orbitron_bold.ttf
+
+  Android will render the variable font file at whatever weight the
+  view's android:textStyle requests (the clock views already use
+  android:textStyle="bold"), so no further config is needed — Android
+  reads the variable font's default/bold instance automatically on API 26+,
+  which matches ZarOS's minSdk.
+
+  After copying the file, just rebuild in Android Studio. No XML changes
+  needed beyond what's already set below.
+-->
+<resources>
+    <string name="font_clock">@font/orbitron_bold</string>
+</resources>

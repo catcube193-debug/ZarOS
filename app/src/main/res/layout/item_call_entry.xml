@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="72dp"
+    android:orientation="horizontal" android:gravity="center_vertical"
+    android:paddingStart="16dp" android:paddingEnd="16dp"
+    android:background="@drawable/bg_result_card"
+    android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
+    android:layout_marginBottom="8dp"
+    android:clickable="true" android:focusable="true">
+    <TextView android:id="@+id/tvCallEmoji"
+        android:layout_width="36dp" android:layout_height="36dp"
+        android:gravity="center" android:textSize="20sp" />
+    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+        android:layout_weight="1" android:orientation="vertical"
+        android:layout_marginStart="12dp">
+        <TextView android:id="@+id/tvCallName" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textColor="#FFFFFF"
+            android:textSize="15sp" android:textStyle="bold" />
+        <TextView android:id="@+id/tvCallInfo" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textColor="#66FFFFFF"
+            android:textSize="12sp" android:layout_marginTop="2dp" />
+    </LinearLayout>
+    <TextView android:id="@+id/btnCallBack"
+        android:layout_width="40dp" android:layout_height="40dp"
+        android:text="📞" android:textSize="18sp" android:gravity="center"
+        android:background="@drawable/bg_clock_btn_green"
+        android:clickable="true" android:focusable="true" />
+</LinearLayout>

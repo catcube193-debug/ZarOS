@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#0A1020">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="88dp"
+        android:orientation="horizontal" android:gravity="bottom|center_vertical"
+        android:paddingStart="16dp" android:paddingEnd="16dp" android:paddingBottom="12dp"
+        android:background="#0D1425">
+        <ImageButton android:id="@+id/btnBack" android:layout_width="36dp" android:layout_height="36dp"
+            android:src="@drawable/ic_chevron_left" android:background="@drawable/bg_nav_btn"
+            android:contentDescription="Back" android:tint="#FFFFFF" />
+        <TextView android:id="@+id/tvContactName" android:layout_width="0dp"
+            android:layout_height="wrap_content" android:layout_weight="1"
+            android:textColor="#FFFFFF" android:textSize="16sp" android:textStyle="bold"
+            android:gravity="center" android:layout_marginEnd="36dp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvMessages"
+        android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:padding="10dp" android:clipToPadding="false" />
+
+    <!-- Input bar -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:background="#0D1425" android:padding="10dp">
+        <EditText android:id="@+id/etMessage" android:layout_width="0dp"
+            android:layout_height="wrap_content" android:layout_weight="1"
+            android:background="@drawable/bg_url_bar" android:textColor="#FFFFFF"
+            android:textColorHint="#55FFFFFF" android:hint="Type a message..."
+            android:textSize="14sp" android:padding="10dp"
+            android:inputType="textMultiLine" android:maxLines="4" />
+        <TextView android:id="@+id/btnSend" android:layout_width="48dp"
+            android:layout_height="48dp" android:text="➤" android:textSize="20sp"
+            android:textColor="#38BDF8" android:gravity="center"
+            android:layout_marginStart="8dp"
+            android:clickable="true" android:focusable="true" />
+    </LinearLayout>
+</LinearLayout>

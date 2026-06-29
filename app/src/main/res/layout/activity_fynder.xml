@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#0F172A">
+
+    <!-- Top bar -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="88dp"
+        android:orientation="horizontal" android:gravity="bottom|center_vertical"
+        android:paddingStart="12dp" android:paddingEnd="12dp" android:paddingBottom="10dp"
+        android:background="#0D1425">
+        <ImageButton android:id="@+id/btnClose"
+            android:layout_width="36dp" android:layout_height="36dp"
+            android:src="@drawable/ic_close" android:background="@drawable/bg_nav_btn"
+            android:contentDescription="Close" android:tint="#FFFFFF" android:layout_marginEnd="8dp" />
+        <LinearLayout android:layout_width="0dp" android:layout_height="38dp"
+            android:layout_weight="1" android:orientation="horizontal"
+            android:background="@drawable/bg_url_bar" android:gravity="center_vertical"
+            android:paddingStart="12dp" android:paddingEnd="8dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Q" android:textColor="#38BDF8" android:textSize="14sp"
+                android:textStyle="bold" android:layout_marginEnd="8dp" />
+            <EditText android:id="@+id/urlInput"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:background="@null"
+                android:textColor="#FFFFFF" android:textColorHint="#55FFFFFF"
+                android:hint="Search or enter URL" android:textSize="13sp"
+                android:singleLine="true" android:imeOptions="actionGo"
+                android:inputType="textUri" android:selectAllOnFocus="true" />
+            <ImageButton android:id="@+id/btnGo"
+                android:layout_width="30dp" android:layout_height="30dp"
+                android:src="@drawable/ic_arrow_right" android:background="@null"
+                android:contentDescription="Go" android:tint="#38BDF8" />
+        </LinearLayout>
+        <ImageButton android:id="@+id/btnShare"
+            android:layout_width="36dp" android:layout_height="36dp"
+            android:src="@drawable/ic_share" android:background="@drawable/bg_nav_btn"
+            android:contentDescription="Share" android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <TextView android:id="@+id/tvPageTitle"
+        android:layout_width="match_parent" android:layout_height="22dp"
+        android:paddingStart="16dp" android:paddingEnd="16dp"
+        android:textColor="#55FFFFFF" android:textSize="11sp"
+        android:singleLine="true" android:ellipsize="end"
+        android:background="#0B1020" android:gravity="center_vertical" />
+
+    <ProgressBar android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent" android:layout_height="2dp"
+        android:progressTint="#38BDF8" android:progressBackgroundTint="#1A3A5C"
+        android:visibility="gone" />
+
+    <!-- Fynder Home Page -->
+    <LinearLayout android:id="@+id/fynderHomePage"
+        android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:orientation="vertical"
+        android:gravity="center" android:padding="28dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Fynder" android:textColor="#38BDF8"
+            android:textSize="42sp" android:textStyle="bold" android:layout_marginBottom="8dp" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="AI-powered ZarOS search" android:textColor="#44FFFFFF"
+            android:textSize="14sp" android:layout_marginBottom="28dp" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="52dp"
+            android:orientation="horizontal" android:background="@drawable/bg_url_bar"
+            android:gravity="center_vertical" android:paddingStart="16dp" android:paddingEnd="8dp">
+            <EditText android:id="@+id/etHomeSearch"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:background="@null"
+                android:textColor="#FFFFFF" android:textColorHint="#55FFFFFF"
+                android:hint="Search and Fynd anything..." android:textSize="14sp"
+                android:singleLine="true" android:imeOptions="actionSearch" />
+            <Button android:id="@+id/btnHomeSearch"
+                android:layout_width="wrap_content" android:layout_height="38dp"
+                android:text="Fynd" android:textColor="#FFFFFF"
+                android:backgroundTint="#0EA5E9" android:textStyle="bold"
+                android:layout_marginStart="4dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Results scroll view -->
+    <ScrollView android:id="@+id/scrollResults"
+        android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:scrollbars="none"
+        android:overScrollMode="never" android:visibility="gone">
+        <LinearLayout android:id="@+id/resultsContainer"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="14dp" android:paddingBottom="30dp" />
+    </ScrollView>
+
+    <!-- WebView -->
+    <WebView android:id="@+id/webView"
+        android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:visibility="gone" />
+
+    <!-- Bottom nav -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="64dp"
+        android:orientation="horizontal" android:gravity="center"
+        android:background="#0D1425" android:paddingStart="8dp" android:paddingEnd="8dp">
+        <ImageButton android:id="@+id/btnBack" android:layout_width="0dp"
+            android:layout_height="44dp" android:layout_weight="1"
+            android:src="@drawable/ic_chevron_left" android:background="@null"
+            android:tint="#FFFFFF" android:contentDescription="Back" />
+        <ImageButton android:id="@+id/btnForward" android:layout_width="0dp"
+            android:layout_height="44dp" android:layout_weight="1"
+            android:src="@drawable/ic_chevron_right" android:background="@null"
+            android:tint="#FFFFFF" android:contentDescription="Forward" />
+        <ImageButton android:id="@+id/btnRefresh" android:layout_width="0dp"
+            android:layout_height="44dp" android:layout_weight="1"
+            android:src="@drawable/ic_refresh" android:background="@null"
+            android:tint="#FFFFFF" android:contentDescription="Refresh" />
+        <ImageButton android:id="@+id/btnHome" android:layout_width="0dp"
+            android:layout_height="44dp" android:layout_weight="1"
+            android:src="@drawable/ic_home" android:background="@null"
+            android:tint="#38BDF8" android:contentDescription="Home" />
+        <ImageButton android:id="@+id/btnOpenExternal" android:layout_width="0dp"
+            android:layout_height="44dp" android:layout_weight="1"
+            android:src="@drawable/ic_open_external" android:background="@null"
+            android:tint="#FFFFFF" android:contentDescription="Open external" />
+    </LinearLayout>
+</LinearLayout>

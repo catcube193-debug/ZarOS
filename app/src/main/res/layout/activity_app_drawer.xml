@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#E80F172A">
+
+    <!-- Top bar -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="88dp"
+        android:orientation="horizontal" android:gravity="bottom|center_vertical"
+        android:paddingStart="16dp" android:paddingEnd="16dp" android:paddingBottom="10dp">
+        <ImageButton android:id="@+id/btnClose"
+            android:layout_width="36dp" android:layout_height="36dp"
+            android:src="@drawable/ic_close" android:background="@drawable/bg_nav_btn"
+            android:contentDescription="Close" android:tint="#FFFFFF" />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="All Apps"
+            android:textColor="#FFFFFF" android:textSize="18sp" android:textStyle="bold"
+            android:gravity="center" />
+        <TextView android:id="@+id/tvAppCount"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="" android:textColor="#55FFFFFF" android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Search -->
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="48dp"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:layout_marginStart="16dp" android:layout_marginEnd="16dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/bg_url_bar"
+        android:paddingStart="14dp" android:paddingEnd="14dp">
+        <ImageView android:layout_width="18dp" android:layout_height="18dp"
+            android:src="@drawable/ic_search" android:contentDescription="Search"
+            android:layout_marginEnd="10dp" />
+        <EditText android:id="@+id/etSearch"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@null" android:textColor="#FFFFFF"
+            android:textColorHint="#55FFFFFF" android:hint="Search apps..."
+            android:textSize="14sp" android:singleLine="true"
+            android:imeOptions="actionSearch" android:inputType="text" />
+    </LinearLayout>
+
+    <!-- Loading -->
+    <ProgressBar android:id="@+id/progressLoading"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_gravity="center" android:visibility="gone"
+        android:indeterminateTint="#38BDF8" />
+
+    <!-- Grid -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDrawer"
+        android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:padding="8dp"
+        android:clipToPadding="false" android:overScrollMode="never" />
+
+</LinearLayout>

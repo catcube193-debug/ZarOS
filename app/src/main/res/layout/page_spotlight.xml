@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ZarOS Home Screen — Springboard Page 0: Spotlight / Search
+
+  Extracted from the original NestedScrollView layout (4.0.x) into its
+  own standalone page so it can be hosted inside a ViewPager2 page as
+  part of the 4.1.0 springboard rework. Content and behavior are
+  unchanged from before — only the container changed.
+-->
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:paddingTop="56dp">
+
+        <!-- Search bar -->
+        <LinearLayout
+            android:id="@+id/searchBar"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/bg_search_bar"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:elevation="4dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_search"
+                android:contentDescription="@null" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search and Fynd"
+                android:textSize="15sp"
+                android:textColor="#77333333"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginStart="10dp" />
+
+        </LinearLayout>
+
+        <!-- Weather Widget -->
+        <com.zaros.app.ui.WeatherWidget
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Quick apps row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="8dp">
+
+            <!-- Phone quick icon -->
+            <LinearLayout
+                android:id="@+id/quickPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginEnd="20dp">
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/ic_app_phone"
+                    android:background="@drawable/bg_clock_btn_green"
+                    android:padding="12dp"
+                    android:contentDescription="Phone" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone"
+                    android:textSize="11sp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="6dp" />
+            </LinearLayout>
+
+            <!-- Fynder quick icon -->
+            <LinearLayout
+                android:id="@+id/quickFynder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginEnd="20dp">
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/ic_app_fynder"
+                    android:background="@drawable/bg_icon_white"
+                    android:padding="10dp"
+                    android:contentDescription="Fynder" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fynder"
+                    android:textSize="11sp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="6dp" />
+            </LinearLayout>
+
+            <!-- Messages quick icon -->
+            <LinearLayout
+                android:id="@+id/quickMessages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/ic_app_messages"
+                    android:background="@drawable/bg_clock_btn_blue"
+                    android:padding="12dp"
+                    android:contentDescription="Messages" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Messages"
+                    android:textSize="11sp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="6dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Recent widget card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/bg_widget_card"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RECENT"
+                android:textSize="10sp"
+                android:textColor="#80FFFFFF"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="10dp" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:chipSpacingHorizontal="8dp"
+                app:chipSpacingVertical="8dp">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipFynder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🔍  Fynder"
+                    style="@style/Widget.ZarOS.Chip" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipSettings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⚙️  Settings"
+                    style="@style/Widget.ZarOS.Chip" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipStore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🛍  App Store"
+                    style="@style/Widget.ZarOS.Chip" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

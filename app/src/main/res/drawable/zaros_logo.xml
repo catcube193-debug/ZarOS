@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ZarOS Boot Logo
+  Geometric crown/bracket: red left half, blue right half, black background
+  Based on the submitted logo concept.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- Black background -->
+    <path android:pathData="M0,0 L200,0 L200,200 L0,200 Z"
+        android:fillColor="#000000" />
+
+    <!-- RED LEFT SIDE -->
+    <!-- Outer left vertical bar -->
+    <path android:pathData="M18,105 L42,105 L42,170 L18,170 Z"
+        android:fillColor="#FF0000" />
+    <!-- Bottom left horizontal -->
+    <path android:pathData="M18,150 L100,150 L100,170 L18,170 Z"
+        android:fillColor="#FF0000" />
+    <!-- Inner left vertical (finger) -->
+    <path android:pathData="M62,38 L82,38 L82,105 L62,105 Z"
+        android:fillColor="#FF0000" />
+
+    <!-- BLUE RIGHT SIDE -->
+    <!-- Outer right vertical bar -->
+    <path android:pathData="M158,105 L182,105 L182,170 L158,170 Z"
+        android:fillColor="#0000FF" />
+    <!-- Bottom right horizontal -->
+    <path android:pathData="M100,150 L182,150 L182,170 L100,170 Z"
+        android:fillColor="#0000FF" />
+    <!-- Inner right vertical (finger) -->
+    <path android:pathData="M118,38 L138,38 L138,105 L118,105 Z"
+        android:fillColor="#0000FF" />
+
+</vector>
